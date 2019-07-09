@@ -16,4 +16,4 @@ import { AccordionModule as MkAccordionModule, BoxModule } from 'angular-admin-l
   ],
   declarations: [AccordionaComponent]
 })
-export class AccordionModule { }
+export class AccordionaModule { }

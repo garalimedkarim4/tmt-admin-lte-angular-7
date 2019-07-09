@@ -19,6 +19,13 @@ const routes: Routes = [
     }
   },
   {
+    path: 'accordiona',
+    loadChildren: './+accordiona/accordiona.module#AccordionaModule',
+    data: {
+      title: 'Accordiona'
+    }
+  },    
+  {
   path: '',
   children: [
     {
@@ -32,13 +39,7 @@ const routes: Routes = [
     //     title: 'Accordionsss'
     //   }
     // },
-     {
-      path: 'accordiona',
-      loadChildren: './+accordiona/accordiona.module#AccordionaModule',
-      data: {
-        title: 'Accordiona'
-      }
-    },    
+  
     {
       path: 'utilisateurs',
       loadChildren: './utilisateurs/utilisateurs.module#UtilisateursModule',

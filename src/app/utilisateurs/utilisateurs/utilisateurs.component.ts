@@ -1,17 +1,15 @@
-import { Component, OnInit, AfterViewInit, NgZone, ChangeDetectorRef, ViewRef } from '@angular/core';
-import Prism = require('prismjs');
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-utilisateurs',
   templateUrl: './utilisateurs.component.html',
   styleUrls: ['./utilisateurs.component.css']
 })
-export class UtilisateursComponent implements AfterViewInit {
+export class UtilisateursComponent {
 
   constructor(
-  ) {}
-
-  ngAfterViewInit() {
-    Prism.highlightAll();
+  ){
+    
   }
+
 }
