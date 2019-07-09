@@ -24,7 +24,7 @@ import { LoadingPageModule, MaterialBarModule } from 'angular-loading-page';
   ],
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   bootstrap: [AppComponent]
 })

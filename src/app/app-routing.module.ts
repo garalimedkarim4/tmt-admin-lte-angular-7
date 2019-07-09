@@ -4,20 +4,46 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+     {
+      path: 'accordion',
+      loadChildren: './+accordion/accordion.module#AccordionModule',
+      data: {
+        title: 'Accordionsss'
+      }
+    },  
+  {
+    path: 'utilisateurs',
+    loadChildren: './utilisateurs/utilisateurs.module#UtilisateursModule',
+    data: {
+      title: 'Utilisateurs',
+    }
+  },
   {
   path: '',
-  data: {
-      title: 'Get Started'
-  },
   children: [
     {
       path: '',
       component: HomeComponent
-    }, {
-      path: 'accordion',
-      loadChildren: './+accordion/accordion.module#AccordionModule',
+    },
+    //  {
+    //   path: 'accordion',
+    //   loadChildren: './+accordion/accordion.module#AccordionModule',
+    //   data: {
+    //     title: 'Accordionsss'
+    //   }
+    // },
+     {
+      path: 'accordiona',
+      loadChildren: './+accordiona/accordiona.module#AccordionaModule',
       data: {
-        title: 'Accordion'
+        title: 'Accordiona'
+      }
+    },    
+    {
+      path: 'utilisateurs',
+      loadChildren: './utilisateurs/utilisateurs.module#UtilisateursModule',
+      data: {
+        title: 'utilisateurs'
       }
     }, {
       path: 'alert',

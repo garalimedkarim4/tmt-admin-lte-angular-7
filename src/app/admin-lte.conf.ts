@@ -10,6 +10,17 @@ export const adminLteConf = {
   // layout: 'normal',
   sidebarLeftMenu: [
     {label: 'MAIN NAVIGATION', separator: true},
+    {label: 'Accueil', route: '/accordion', iconClasses: 'fa fa-home'},
+    {label: 'Utilisateurs', route: '/utilisateurs', iconClasses: 'fa fa-users'},
+    {label: 'Medecin', route: '/c', iconClasses: 'fa fa-user-md'},
+    {label: 'Patient', route: '/d', iconClasses: 'fa fa-wheelchair-alt'}, //fa-id-card
+    {label: 'Agent', route: '/e', iconClasses: 'fa fa-male'},
+    {label: 'Opération', route: '/', iconClasses: 'fa fa-scissors'},
+    {label: 'Voyage', route: '/', iconClasses: 'fa fa-plane'},
+    {label: 'Configuration', route: '/', iconClasses: 'fa fa-cog'},
+    {label: 'Evenement', route: '/', iconClasses: 'fa fa-birthday-cake'},
+    {label: 'Disponibilité Médecin', route: '/', iconClasses: 'fa fa-calendar'},
+    {label: 'Rendez-Vous', route: '/', iconClasses: 'fa fa-handshake-o'},
     {label: 'Get Started', route: '/', iconClasses: 'fa fa-road', pullRights: [{text: 'New', classes: 'label pull-right bg-green'}]},
     {label: 'Layout', iconClasses: 'fa fa-th-list', children: [
         {label: 'Configuration', route: 'layout/configuration'},
@@ -21,6 +32,7 @@ export const adminLteConf = {
       ]},
     {label: 'COMPONENTS', separator: true},
     {label: 'Accordion', route: 'accordion', iconClasses: 'fa fa-tasks'},
+    {label: 'Accordiona', route: 'accordiona', iconClasses: 'fa fa-tasks'},
     {label: 'Alert', route: 'alert', iconClasses: 'fa fa-exclamation-triangle'},
     {label: 'Boxs', iconClasses: 'fa fa-files-o', children: [
         {label: 'Default Box', route: 'boxs/box'},
