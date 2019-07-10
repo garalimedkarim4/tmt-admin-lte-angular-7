@@ -10,17 +10,18 @@ export const adminLteConf = {
   // layout: 'normal',
   sidebarLeftMenu: [
     {label: 'MAIN NAVIGATION', separator: true},
-    {label: 'Accueil', route: 'accordion', iconClasses: 'fa fa-home'},
+    {label: 'Accueil', route: 'accueil', iconClasses: 'fa fa-home'},
     {label: 'Utilisateurs', route: 'utilisateurs', iconClasses: 'fa fa-users'},
-    {label: 'Medecin', route: '', iconClasses: 'fa fa-user-md'},
-    {label: 'Patient', route: '', iconClasses: 'fa fa-wheelchair-alt'}, //fa-id-card
-    {label: 'Agent', route: '', iconClasses: 'fa fa-male'},
-    {label: 'Opération', route: '', iconClasses: 'fa fa-scissors'},
-    {label: 'Voyage', route: '', iconClasses: 'fa fa-plane'},
-    {label: 'Configuration', route: '', iconClasses: 'fa fa-cog'},
-    {label: 'Evenement', route: '', iconClasses: 'fa fa-birthday-cake'},
-    {label: 'Disponibilité Médecin', route: '', iconClasses: 'fa fa-calendar'},
-    {label: 'Rendez-Vous', route: '', iconClasses: 'fa fa-handshake-o'},
+    {label: 'Medecin', route: 'medecin', iconClasses: 'fa fa-user-md'},
+    {label: 'Patient', route: 'patient', iconClasses: 'fa fa-wheelchair-alt'}, //fa-id-card
+    {label: 'Agent', route: 'agent', iconClasses: 'fa fa-male'},
+    {label: 'Opération', route: 'operation', iconClasses: 'fa fa-scissors'},
+    {label: 'Voyage', route: 'voyage', iconClasses: 'fa fa-plane'},
+    {label: 'Configuration', route: 'configuration', iconClasses: 'fa fa-cog'},
+    {label: 'Evenement', route: 'evenement', iconClasses: 'fa fa-birthday-cake'},
+    {label: 'Disponibilité Médecin', route: 'disponibilite-medecin', iconClasses: 'fa fa-calendar'},
+    {label: 'Rendez-Vous', route: 'rendez-vous', iconClasses: 'fa fa-handshake-o'},
+    {label: 'Old Menu for test', separator: true},
     {label: 'Get Started', route: '', iconClasses: 'fa fa-road', pullRights: [{text: 'New', classes: 'label pull-right bg-green'}]},
     {label: 'Layout', iconClasses: 'fa fa-th-list', children: [
         {label: 'Configuration', route: 'layout/configuration'},

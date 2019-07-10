@@ -229,7 +229,8 @@ export class SidebarLeftComponent implements OnInit, AfterViewInit, OnDestroy {
    * @method setMenuListeners
    */
   setMenuListeners(url): void {
-    if (url === '/') {
+    if (url === '/' || url === '') {
+      url = 'accueil';
       this.activeItems(url);
       this.changeDetectorRef.detectChanges();
     } else {
@@ -330,6 +331,7 @@ export class SidebarLeftComponent implements OnInit, AfterViewInit, OnDestroy {
     this.collapsedItems = [];
 
     const items = this.findItemsByUrl(url, this.menu);
+    // console.log('urls',items);
     items.forEach(item => {
       item.isActive = true;
       this.uncollapseItemParents(item, true);
