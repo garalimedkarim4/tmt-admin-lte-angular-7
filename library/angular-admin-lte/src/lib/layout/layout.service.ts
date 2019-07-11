@@ -29,7 +29,7 @@ export class LayoutService {
   private init() {
     this.router.events.subscribe((event: RouterEvent) => {
       if (event instanceof ActivationStart) {
-        this.customLayout = event.snapshot.data.customLayout;
+        this.customLayout = event.snapshot.data.customLayout;        
         this.isCustomLayout.next(!!this.customLayout);
       }
     });

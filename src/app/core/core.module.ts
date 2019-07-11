@@ -7,6 +7,7 @@ import { BoxModule, TabsModule, DropdownModule } from 'angular-admin-lte';
 import { HeaderInnerComponent } from './header-inner/header-inner.component';
 import { SidebarLeftInnerComponent } from './sidebar-left-inner/sidebar-left-inner.component';
 import { SidebarRightInnerComponent } from './sidebar-right-inner/sidebar-right-inner.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { SidebarRightInnerComponent } from './sidebar-right-inner/sidebar-right-
     HttpClientModule,
     DropdownModule,
     TabsModule,
-    BoxModule
+    BoxModule,
+    RouterModule,
   ],
   declarations: [HeaderInnerComponent, SidebarLeftInnerComponent, SidebarRightInnerComponent],
   exports: [BoxModule, TabsModule, HeaderInnerComponent, SidebarLeftInnerComponent, SidebarRightInnerComponent]

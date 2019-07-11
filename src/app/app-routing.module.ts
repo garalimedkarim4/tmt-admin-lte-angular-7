@@ -2,93 +2,120 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './guards/auth.guard';
 
-const routes: Routes = [
-  { path: '',   redirectTo: 'accueil', pathMatch: 'full' },  
+const routes: Routes = [  
   {
-    path: 'accueil',
-    loadChildren: './accueil/accueil.module#AccueilModule',
-    data: {
-      title: 'Accueil'
-    }
-  },  
-  {
-    path: 'utilisateurs',
-    loadChildren: './utilisateurs/utilisateurs.module#UtilisateursModule',
-    data: {
-      title: 'Utilisateurs',
-    }
+    path: '',
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        component: HomeComponent
+      }, 
+      {
+        path: 'accueil',
+        loadChildren: './accueil/accueil.module#AccueilModule',
+        data: {
+          title: 'Accueil'
+        }
+      },  
+      {
+        path: 'utilisateurs',
+        loadChildren: './utilisateurs/utilisateurs.module#UtilisateursModule',
+        data: {
+          title: 'Utilisateurs',
+        }
+      },
+      {
+        path: 'medecin',
+        loadChildren: './medecin/medecin.module#MedecinModule',
+        data: {
+          title: 'Medecin',
+        }
+      },
+      {
+        path: 'patient',
+        loadChildren: './patient/patient.module#PatientModule',
+        data: {
+          title: 'Patient',
+        }
+      },    
+      {
+        path: 'agent',
+        loadChildren: './agent/agent.module#AgentModule',
+        data: {
+          title: 'Agent',
+        }
+      },   
+      {
+        path: 'operation',
+        loadChildren: './operation/operation.module#OperationModule',
+        data: {
+          title: 'Operation',
+        }
+      },   
+      {
+        path: 'voyage',
+        loadChildren: './voyage/voyage.module#VoyageModule',
+        data: {
+          title: 'Voyage',
+        }
+      },   
+      {
+        path: 'configuration',
+        loadChildren: './configuration/configuration.module#ConfigurationModule',
+        data: {
+          title: 'Configuration',
+        }
+      },
+      {
+        path: 'evenement',
+        loadChildren: './evenement/evenement.module#EvenementModule',
+        data: {
+          title: 'Evenement',
+        }
+      },   
+      {
+        path: 'disponibilite-medecin',
+        loadChildren: './disponibilite-medecin/disponibilite-medecin.module#DisponibiliteMedecinModule',
+        data: {
+          title: 'Disponibilité Medecin',
+        }
+      },   
+      {
+        path: 'rendez-vous',
+        loadChildren: './rendez-vous/rendez-vous.module#RendezVousModule',
+        data: {
+          title: 'Rendez-vous',
+        }
+      },            
+      {
+        path: 'accordiona',
+        loadChildren: './+accordiona/accordiona.module#AccordionaModule',
+        data: {
+          title: 'Accordiona'
+        }
+      },        
+    ]
   },
   {
-    path: 'medecin',
-    loadChildren: './medecin/medecin.module#MedecinModule',
+    path: 'login',
+    // canActivate: [LoginGuard],
+    loadChildren: './+login/login.module#LoginModule',
     data: {
-      title: 'Medecin',
+      customLayout: true
     }
-  },
-  {
-    path: 'patient',
-    loadChildren: './patient/patient.module#PatientModule',
+  }, {
+    path: 'register',
+    loadChildren: './+register/register.module#RegisterModule',
     data: {
-      title: 'Patient',
+      customLayout: true
     }
   },    
-  {
-    path: 'agent',
-    loadChildren: './agent/agent.module#AgentModule',
-    data: {
-      title: 'Agent',
-    }
-  },   
-  {
-    path: 'operation',
-    loadChildren: './operation/operation.module#OperationModule',
-    data: {
-      title: 'Operation',
-    }
-  },   
-  {
-    path: 'voyage',
-    loadChildren: './voyage/voyage.module#VoyageModule',
-    data: {
-      title: 'Voyage',
-    }
-  },   
-  {
-    path: 'configuration',
-    loadChildren: './configuration/configuration.module#ConfigurationModule',
-    data: {
-      title: 'Configuration',
-    }
-  },
-  {
-    path: 'evenement',
-    loadChildren: './evenement/evenement.module#EvenementModule',
-    data: {
-      title: 'Evenement',
-    }
-  },   
-  {
-    path: 'disponibilite-medecin',
-    loadChildren: './disponibilite-medecin/disponibilite-medecin.module#DisponibiliteMedecinModule',
-    data: {
-      title: 'Disponibilité Medecin',
-    }
-  },   
-  {
-    path: 'rendez-vous',
-    loadChildren: './rendez-vous/rendez-vous.module#RendezVousModule',
-    data: {
-      title: 'Rendez-vous',
-    }
-  },            
-  {
-    path: 'accordiona',
-    loadChildren: './+accordiona/accordiona.module#AccordionaModule',
-    data: {
-      title: 'Accordiona'
-    }
-  },    
+  { path: '',   redirectTo: 'accueil', pathMatch: 'full' }, 
+  { path: '**',   redirectTo: 'accueil', pathMatch: 'full' }, 
+
   // {
   // path: '',
   // children: [
@@ -96,13 +123,13 @@ const routes: Routes = [
   //     path: '',
   //     component: HomeComponent
   //   },
-  //   //  {
-  //   //   path: 'accordion',
-  //   //   loadChildren: './+accordion/accordion.module#AccordionModule',
-  //   //   data: {
-  //   //     title: 'Accordionsss'
-  //   //   }
-  //   // },
+  //    {
+  //     path: 'accordion',
+  //     loadChildren: './+accordion/accordion.module#AccordionModule',
+  //     data: {
+  //       title: 'Accordionsss'
+  //     }
+  //   },
   
   //   {
   //     path: 'utilisateurs',
@@ -215,19 +242,7 @@ const routes: Routes = [
   //     }
   //   ]
   // }, 
-  {
-    path: 'login',
-    loadChildren: './+login/login.module#LoginModule',
-    data: {
-      customLayout: true
-    }
-  }, {
-    path: 'register',
-    loadChildren: './+register/register.module#RegisterModule',
-    data: {
-      customLayout: true
-    }
-  },
+
 ];
 
 @NgModule({
